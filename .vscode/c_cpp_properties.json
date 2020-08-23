@@ -13,7 +13,7 @@
         "STM32H743xx",
         "USE_HAL_DRIVER"
       ],
-      "compilerPath": "arm-none-eabi-gcc",
+      "compilerPath": "C:/Program Files (x86)/GNU Arm Embedded Toolchain/9 2020-q2-update/bin/arm-none-eabi-gcc.exe",
       "cStandard": "c11",
       "cppStandard": "c++11"
     }
