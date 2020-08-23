@@ -19,10 +19,13 @@
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
+#include "dma.h"
+#include "dma2d.h"
 #include "eth.h"
 #include "gpio.h"
+#include "spi.h"
 #include "usart.h"
-#include "usb_otg.h"
+#include "usb_device.h"
 
 
 /* Private includes ----------------------------------------------------------*/
@@ -89,9 +92,13 @@ int main(void) {
 
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
+  MX_DMA_Init();
   MX_ETH_Init();
   MX_USART3_UART_Init();
-  MX_USB_OTG_FS_PCD_Init();
+  MX_SPI3_Init();
+  MX_SPI4_Init();
+  MX_USB_DEVICE_Init();
+  MX_DMA2D_Init();
   /* USER CODE BEGIN 2 */
 
   /* USER CODE END 2 */
@@ -171,7 +178,10 @@ void SystemClock_Config(void) {
     Error_Handler();
   }
   PeriphClkInitStruct.PeriphClockSelection =
-      RCC_PERIPHCLK_USART3 | RCC_PERIPHCLK_USB;
+      RCC_PERIPHCLK_USART3 | RCC_PERIPHCLK_SPI4 | RCC_PERIPHCLK_SPI3 |
+      RCC_PERIPHCLK_USB;
+  PeriphClkInitStruct.Spi123ClockSelection = RCC_SPI123CLKSOURCE_PLL;
+  PeriphClkInitStruct.Spi45ClockSelection = RCC_SPI45CLKSOURCE_D2PCLK1;
   PeriphClkInitStruct.Usart234578ClockSelection =
       RCC_USART234578CLKSOURCE_D2PCLK1;
   PeriphClkInitStruct.UsbClockSelection = RCC_USBCLKSOURCE_PLL;

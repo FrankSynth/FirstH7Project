@@ -7,6 +7,8 @@
         "Drivers/CMSIS/Include",
         "Drivers/STM32H7xx_HAL_Driver/Inc",
         "Drivers/STM32H7xx_HAL_Driver/Inc/Legacy",
+        "Middlewares/ST/STM32_USB_Device_Library/Class/AUDIO/Inc",
+        "Middlewares/ST/STM32_USB_Device_Library/Core/Inc",
         "Inc"
       ],
       "defines": [

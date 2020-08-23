@@ -45,6 +45,21 @@
             "problemMatcher": [
                 "$gcc"
             ]
+        },
+        {
+            "label": "Build STM",
+            "type": "process",
+            "command": "${command:stm32-for-vscode.build}",
+            "options": {
+                "cwd": "${workspaceRoot}"
+            },
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": [
+                "$gcc"
+            ]
         }
     ]
 }
