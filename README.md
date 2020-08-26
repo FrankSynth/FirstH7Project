@@ -12,6 +12,8 @@ Github Repo:
 All die Plugins muessen installiert und im PATH hinterlegt werden. STM Plugins und neue Software (CubeMX und ST Link): \
 ownCloud\Synth\stm
 
+Als Debugger **OpenOCD**.
+
 ## tasks.json:
 Um das Projekt in cpp zu compilen reicht es, eine main.cpp anzulegen und den Inhalt der main.c rueber zu kopieren. Allerdings fehlt nach wie vor die cpp standard library im compile-Befehl.
 
