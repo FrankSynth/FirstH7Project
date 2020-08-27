@@ -4,7 +4,7 @@
         {
             "label": "Build STM cpp",
             "type": "shell",
-            "command": "make -f STM32Make.make LIBS=\"-lc -lm -lnosys -lstdc++\"",
+            "command": "make -f STM32MakeCPP.make LIBS=\"-lc -lm -lnosys -lstdc++\"",
             "options": {
                 "cwd": "${workspaceRoot}"
             },

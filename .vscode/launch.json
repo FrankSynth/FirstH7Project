@@ -4,7 +4,7 @@
             "showDevDebugOutput": true,
             "cwd": "${workspaceRoot}",
             "executable": "./build/FirstH7Project.elf",
-            "name": "Debug STM32",
+            "name": "Debug STM32 cpp",
             "request": "launch",
             "type": "cortex-debug",
             "servertype": "openocd",
