@@ -108,8 +108,8 @@ CP = $(GCC_PATH)/$(PREFIX)objcopy
 SZ = $(GCC_PATH)/$(PREFIX)size
 else
 CXX = $(PREFIX)g++
-CC = $(PREFIX)gcc
-AS = $(PREFIX)gcc -x assembler-with-cpp
+CC = $(PREFIX)g++
+AS = $(PREFIX)g++ -x assembler-with-cpp
 CP = $(PREFIX)objcopy
 SZ = $(PREFIX)size
 endif

@@ -30,8 +30,8 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 // #include <string>
-#include <stdio.h>
-#include <string.h>
+// #include <stdio.h>
+#include <string>
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -57,8 +57,14 @@
 /* Private function prototypes -----------------------------------------------*/
 void SystemClock_Config(void);
 /* USER CODE BEGIN PFP */
-void print(const char *buf);
-void println(const char *buf);
+void print(std::string stringbuffer);
+void println(std::string stringbuffer);
+void print(int stringbuffer);
+void println(int stringbuffer);
+void print(float stringbuffer);
+void println(float stringbuffer);
+void print(double stringbuffer);
+void println(double stringbuffer);
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
@@ -120,8 +126,11 @@ int main(void) {
         }
         // u_int8_t data[10] = "Hello";
         // HAL_UART_Transmit(&huart3, data, 5, 10);
-        print("hello!!!");
-        println(" world!!!");
+        print("yes!!!");
+        println(" seq!!!");
+        println(1000);
+        println(46.945);
+        // println(123);
         HAL_Delay(500);
 
         /* USER CODE END WHILE */
@@ -199,22 +208,30 @@ void SystemClock_Config(void) {
 }
 
 /* USER CODE BEGIN 4 */
-void print(const char *buf) {
-    uint8_t data[200];
-
-    strcpy((char *)data, buf);
-    HAL_UART_Transmit(&huart3, data, strlen((char *)data), 100);
+void print(std::string stringbuffer) {
+    HAL_UART_Transmit(&huart3, (uint8_t *)stringbuffer.data(), stringbuffer.length(), 100);
 }
-
-void println(const char *buf) {
-    uint8_t data[200];
-
-    strcpy((char *)data, buf);
-    uint8_t length = strlen((char *)data);
-    data[length] = '\r';
-    data[length + 1] = '\n';
-    data[length + 2] = '\0';
-    HAL_UART_Transmit(&huart3, data, length + 2, 100);
+void println(std::string stringbuffer) {
+    stringbuffer.append("\r\n");
+    HAL_UART_Transmit(&huart3, (uint8_t *)stringbuffer.data(), stringbuffer.length(), 100);
+}
+void print(int stringbuffer) {
+    print(std::to_string(stringbuffer));
+}
+void println(int stringbuffer) {
+    println(std::to_string(stringbuffer));
+}
+void print(float stringbuffer) {
+    print(std::to_string(stringbuffer));
+}
+void println(float stringbuffer) {
+    println(std::to_string(stringbuffer));
+}
+void print(double stringbuffer) {
+    print(std::to_string(stringbuffer));
+}
+void println(double stringbuffer) {
+    println(std::to_string(stringbuffer));
 }
 
 /* USER CODE END 4 */
