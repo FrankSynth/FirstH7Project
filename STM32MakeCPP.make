@@ -203,7 +203,7 @@ OBJECTS += $(addprefix $(BUILD_DIR)/,$(notdir $(ASM_SOURCES:.s=.o)))
 vpath %.s $(sort $(dir $(ASM_SOURCES)))
 
 $(BUILD_DIR)/%.o: %.cpp Makefile | $(BUILD_DIR) 
-	$(CXX) -c $(CXXFLAGS) $(CFLAGS) -Wa,-a,-ad,-alms=$(BUILD_DIR)/$(notdir $(<:.cpp=.lst)) $< -o $@
+	$(CXX) -std=c++17 -c $(CXXFLAGS) $(CFLAGS) -Wa,-a,-ad,-alms=$(BUILD_DIR)/$(notdir $(<:.cpp=.lst)) $< -o $@
 
 $(BUILD_DIR)/%.o: %.c Makefile | $(BUILD_DIR) 
 	$(CC) -c $(CFLAGS) -Wa,-a,-ad,-alms=$(BUILD_DIR)/$(notdir $(<:.c=.lst)) $< -o $@

@@ -131,7 +131,7 @@ int main(void) {
         println(1000);
         println(46.945);
         // println(123);
-        HAL_Delay(540);
+        HAL_Delay(520);
 
         /* USER CODE END WHILE */
 

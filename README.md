@@ -38,10 +38,20 @@ Damit wird nicht nur mit g++ compiled, sondern auch gelinked. Wirft Sonst den Fe
 ```
 undefined reference to `__gxx_personality_v0'
 ```
+Um mit C++17 zu compilen, Zeile 206:
+```
+	$(CXX) -c $(CXXFLAGS) $(CFLAGS) -Wa,-a,-ad,-alms=$(BUILD_DIR)/$(notdir $(<:.cpp=.lst)) $< -o $@
+```
+aendern zu:
+```
+	$(CXX) -std=c++17 -c $(CXXFLAGS) $(CFLAGS) -Wa,-a,-ad,-alms=$(BUILD_DIR)/$(notdir $(<:.cpp=.lst)) $< -o $@
+```
+
+Welche C++ Version die richtige fuer uns ist muessen wir noch evaluieren.
 
 Zu guter letzt **main.c** in **main.cpp** umbenennen. Die main.c kann liegen bleiben.
 
-#### CubeMX Project Update
+### CubeMX Project Update
 Fuer ein Update des CubeMX Project, **main.cpp** in **main.c** kopieren, CubeMX updaten, und Inhalt wieder zurueck kopieren. CubeMX updatet nur die .c!
 
 Ggf ebenfalls die **.make** Datei updaten, z.B. wenn neue Libs dazu kamen. Selbe Steps wie oben nochmal durch (inkl **Build STM32 Project**).
@@ -128,7 +138,7 @@ Aktivierte USB-Modes fuegen dem Projekt Middleware hinzu. Zum korrekten funktion
       ],
 ```
 
-Ebenfalls in der **c_cpp_properties.json**:
+Desweiteren:
 ```
 "compilerPath": "arm-none-eabi-gcc",
 ```
