@@ -98,6 +98,8 @@ Diese Tasks compilen mit der cpp standard library
             ]
         },
 ```
+stm32h7x.cfg muss ggf angepasst werden!
+
 
 Die Tasks koennen mit **ctrl+shift+b** aufgerufen werden. Da gibt auch den Flash-Befehl.
 
@@ -122,6 +124,7 @@ Damit beim debuggen zuvor ebenfalls mit cpp compiled wird, muss dies hinzugefueg
             ]
         },
 ```
+stm32h7x.cfg muss ggf angepasst werden!
 
 ## c_cpp_properties.json
 Aktivierte USB-Modes fuegen dem Projekt Middleware hinzu. Zum korrekten funktionieren von Intellisense in vscode muessen die includes in der **c_cpp_properties.json** ergaenzt werden.
@@ -174,7 +177,7 @@ void println(int stringbuffer) {
 }
 ...
 ```
-Als Template noch zu testen. DMA noch zu testen. UART3 ist in diesem Falle ueber USB Pins ebenfalls zum Computer verbunden. Ggf im Datenblatt checken.
+Als Template noch zu testen. DMA ist im anderen Repo. UART3 ist in diesem Falle ueber USB Pins ebenfalls zum Computer verbunden. Ggf im Datenblatt checken.
 
 im Device Manager unter Ports den COMx Port heraussuchen.
 
